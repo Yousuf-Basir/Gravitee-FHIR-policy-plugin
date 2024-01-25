@@ -22,11 +22,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.gravitee.policy</groupId>
-    <artifactId>pizza-policy</artifactId>
+    <artifactId>FHIR-policy</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Gravitee.io APIM - Policy - Pizza</name>
-    <description>Helping you creating your pizza</description>
+    <name>Gravitee.io APIM - Policy - FHIR</name>
+    <description>Convert JSON to FHIR</description>
 
     <parent>
         <groupId>io.gravitee</groupId>
@@ -130,6 +130,17 @@
             <artifactId>assertj-core</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-structures-dstu3</artifactId>
+            <version>5.6.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -188,12 +199,12 @@
                     <prettierJavaVersion>${maven-plugin-prettier.prettierjava.version}</prettierJavaVersion>
                 </configuration>
                 <executions>
-                    <execution>
+                    <!-- <execution>
                         <phase>validate</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
-                    </execution>
+                    </execution> -->
                 </executions>
             </plugin>
         </plugins>
